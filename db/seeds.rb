@@ -6,7 +6,7 @@ Ticket.delete_all()
 Passenger.delete_all()
 
 
-passenger1 = Passenger.new({'first_name' => 'Planey', 'last_name' => 'McPlaneFace', 'nationality' => 'Irish', "date_of_purchase" => '01/04/2017', 'arrived' => true })
+passenger1 = Passenger.new({'first_name' => 'Planey', 'last_name' => 'McPlaneFace', 'nationality' => 'Irish', "date_of_purchase" => '01/04/2017', 'arrived' => false })
 passenger1.save
 passenger2 = Passenger.new({'first_name' => 'Steve', 'last_name' => 'McQueen', 'nationality' => 'American', "date_of_purchase" => '02/04/2017','arrived' => false })
 passenger2.save

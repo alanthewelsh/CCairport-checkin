@@ -24,4 +24,9 @@ class Passenger
     SqlRunner.run(sql)
   end
 
+  def self.all()
+    sql = "SELECT * FROM passengers"
+    return Passengers.map_items(sql)
+  end
+
 end 
