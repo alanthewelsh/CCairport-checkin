@@ -8,7 +8,7 @@ CREATE TABLE passengers (
   last_name VARCHAR(255),
   nationality VARCHAR(255),
   date_of_purchase DATE,
-  arrived BOOLEAN
+  arrived VARCHAR(255)
 );
 
 CREATE TABLE tickets (

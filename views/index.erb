@@ -1,0 +1,28 @@
+<h1>Airline Check-in</h1>
+<a href='/passenger/tickets'>List Tickets</a>
+<a href='/passenger/new'>Add Passenger</a>
+
+
+
+<h2>Welcome to the airline check-in system</h2>
+<table>
+  <tr>
+  <th>Passenger</th>
+  <th></th>
+ 
+
+<td><% @passengers.each do |passenger| %></td>
+  <p>Passenger Name: <%= passenger.passenger_name%></p>
+  <p>Arrival Status: <%= passenger.arrival_status%></p>
+<td><% end %></td>
+  </tr>
+  <tr>
+
+  <th>Ticket Info</th>
+    <td><% @tickets.each do |ticket| %></td>
+  <td><p>Flight # : <%= ticket.destination%></p></td>
+  <td><p>Ticket Class: <%= ticket.class%></p></td>
+<td><% end %><td>
+  </tr>
+</table>
+

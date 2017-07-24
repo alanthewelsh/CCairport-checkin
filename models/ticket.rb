@@ -19,14 +19,32 @@ class Ticket
     @id = ticket['id'].to_i
   end
 
+  def destination
+    return "#{@destination}"
+  end
+
+  def class
+    return "#{@ticket_type}"
+  end
+
+  def flight_date
+    return "#{@flight_date}"
+  end
+
+  def cost
+    return "#{@cost}"
+  end 
+
   def self.delete_all()
     sql = "DELETE FROM tickets"
     SqlRunner.run(sql)
   end
 
   def self.all()
-    sql = "SELECT * FROM passengers"
-    return Passengers.map_items(sql)
+    sql = "SELECT * FROM tickets"
+    ticket = SqlRunner.run(sql)
+    result = ticket.map { |ticket| Ticket.new(ticket) }
+    return result
   end
 
 end 

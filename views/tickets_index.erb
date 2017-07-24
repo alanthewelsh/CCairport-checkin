@@ -1,0 +1,17 @@
+<h1>Airline Check-in - Ticket Management</h1>
+<a href='/passenger/tickets/add'>Add Ticket</a>
+<a href='/passenger/'>Home</a>
+<h2>Tickets Active in System</h2>
+
+
+<% @tickets.each do |ticket| %>
+
+  <p>Flight # : <%= ticket.destination%></p>
+  <p>Flight date : <%= ticket.flight_date%></p>
+  <p>Ticket Class: <%= ticket.class%></p>
+  <p>Cost: £<%= ticket.cost%></p>
+
+
+<% end %>
+
+
