@@ -18,13 +18,13 @@ passenger4.save
 
 
 
-ticket1 = Ticket.new({'destination' => 'New York', 'flight_date' => '01/05/2017', 'cost' => 123.54, 'ticket_type' => 'business', 'passenger_id' => passenger1.id })
+ticket1 = Ticket.new({'destination' => 'New York', 'flight_date' => '01/05/2017','ticket_type' => 'business', 'passenger_id' => passenger1.id })
 ticket1.save
-ticket2 = Ticket.new({'destination' => 'Paris', 'flight_date' => '04/05/2017', 'cost' => 94.75, 'passenger_id' => passenger2.id, 'ticket_type' => 'standard'})
+ticket2 = Ticket.new({'destination' => 'Paris', 'flight_date' => '04/05/2017', 'ticket_type' => 'standard', 'passenger_id' => passenger2.id})
 ticket2.save
-ticket3 = Ticket.new({'destination' => 'Paris', 'flight_date' => '04/05/2017', 'cost' => 94.75, 'passenger_id' => passenger3.id, 'ticket_type' => 'standard'})
+ticket3 = Ticket.new({'destination' => 'Paris', 'flight_date' => '04/05/2017', 'ticket_type' => 'standard', 'passenger_id' => passenger3.id})
 ticket3.save
-ticket4 = Ticket.new({'destination' => 'Peckham', 'flight_date' => '04/05/2017', 'cost' => 3.75, 'ticket_type' => 'standard', 'passenger_id' => passenger4.id  })
+ticket4 = Ticket.new({'destination' => 'Peckham', 'flight_date' => '04/05/2017', 'ticket_type' => 'standard', 'passenger_id' => passenger4.id  })
 ticket4.save
 
 

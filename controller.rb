@@ -18,6 +18,7 @@ end
 
 get '/passengers/tickets/add' do
   @tickets = Ticket.all
+  @passengers = Passenger.all
   erb( :add_ticket )
 end
 
@@ -33,13 +34,20 @@ get '/passengers/new' do
 end
 
 post '/passengers' do
-
   new_passenger = Passenger.new(params)
   new_passenger.save
   redirect to '/passengers'
 end 
 
 get '/passengers/:id/edit' do
-  @passengers = Passenger.find(params['id'])
+  @passenger = Passenger.find(params['id'])
   erb(:edit)
 end
+
+post '/passengers/:id' do
+  passenger_update = Passenger.new(params)
+  passenger_update.update
+  redirect to '/passengers'
+end 
+
+

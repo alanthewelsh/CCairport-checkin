@@ -1,50 +1,97 @@
-<form method="post" action="/passenger/<%= @passenger.id %>">
-  <label for="first-name-field">First Name:</label>
-  <input
-  type="text"
-  name="first_name"
-  id="first-name-field"
-  value="<%= @passenger.first_name %>"
-  />
+<h1>Passenger Management</h1>
 
-  <label for="last-name-field">Last Name:</label>
-  <input
-  type="text"
-  name="last_name"
-  id="last-name-field"
-  value="<%= @passenger.last_name %>"
-  />
+<a href='/passengers'>Home</a>
+<br>
+<h2>Passenger Edit</h2>
+  <section class="body">
+    <form method="post" action="/passengers/<%=@passenger.id%>">
+    <br>
+      <label for="first-name-field">First Name:</label>
+      <input
+      type="text"
+      name="first_name"
+      id="first-name-field"
+      value = "<%= @passenger.first_name %>"
+      />
+      <br>
+      <label for="last-name-field">Last Name:</label>
+      <input
+      type="text"
+      name="last_name"
+      id="last-name-field"
+      value = "<%= @passenger.last_name %>"
+      />
+      <br>
+      <label for="nationality-field">Nationality:</label>
+      <input
+      type="text"
+      name="nationality"
+      id="nationality-field"
+      value = "<%= @passenger.nationality %>"
+      />
+      <br>
+      <label for="date_of_purchase-field">Date of Purchase:</label>
+      <input
+      type="date"
+      name="date_of_purchase"
+      id="date_of_purchase-field"
+      value = "<%= @passenger.date_of_purchase %>"
+      />
 
-  <label for="nationality-field">Nationality:</label>
-  <input
-  type="text"
-  name="nationality"
-  id="nationality-field"
-  value="<%= @passenger.nationality %>"
-  />
-
-  <label for="date_of_purchase-field">Date of Purchase:</label>
-  <input
-  type="date"
-  name="date_of_purchase"
-  id="date_of_purchase-field"
-  value="<%= @passenger.date_of_purchase %>"
-  />
+      <br>
+      <label for="arrival-selection">Has the Passenger Arrived?</label>
+      <select name="arrived" id="passenger-selection">
+        <option
+        value="NOT ARRIVED">NOT ARRIVED</option>
+        
+        <option
+        value="ARRIVED">ARRIVED</option>
+      </select>
+      <br>
 
 
-  <label for="arrived-selection">Has the Passenger Arrived</label>
-  <select name="arrived" id="passenger-selection">
-    <option
-    value="ARRIVED"
-    <%= "selected" if @passenger.arrived == "ARRIVED" %>
-    >ARRIVED</option>
-    <option
-    value="NOT ARRIVED"
-    <%= "selected" if @passenger.arrived == "NOT ARRIVED" %>
-    >NOT ARRIVED</option>
+      <input type='submit' value="Edit Passenger">
+    </form>
+  </section>
+  <br>
+  <h2>Add Ticket to Passenger</h2>
+  <table>
+  <br>
+      <form method="post" action="/passengers/tickets">
+  <label for="destination-selection">Select Destination</label>
+  <select name="Destination" id="passenger-selection">
+    <option value="Paris">Paris</option>
+    <option value="New York">New York</option>
+    <option value="Peckham">Peckham</option>
+    <option value="Rome">Rome</option>
+    <option value="Dublin">Dublin</option>
+    <option value="Manchester">Manchester</option>
   </select>
 
+        <br>
+        <label for="flight_date-field">Enter Flight Date:</label>
+        <input
+        type="date"
+        name="flight_date"
+        id="flight_date-field"
+        />
+        <br>
+        <br>
+       <label for="ticket_type-feild">Enter the Ticket Type:</label>
+       <select name="ticket_type" id="ticket_type-selection">
+         <option value="ECONOMY"> ECONOMY </option>
+         <option value="BUSINESS"> BUSINESS </option>
+         </select>
+      <br>
+        <input type="submit" value="Add Ticket">
+      </form>
+      <form method="post">
+      </form>
+  </table>
+
+  <section>
 
 
-  <input type='submit' value="Edit Pizza">
-</form>
+
+
+   

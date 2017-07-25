@@ -9,8 +9,11 @@
   margin: 0px;
 }
 
-.cell {
-  flex: 1;
-  padding: 10px;
-  border: solid 1px mediumaquamarine;
+.label {
+background: silver;
+color: black;
+padding: 20px;
+width: 500px;
+margin: 5px;
+
 }

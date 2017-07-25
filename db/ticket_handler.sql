@@ -15,7 +15,6 @@ CREATE TABLE tickets (
   id SERIAL8 PRIMARY KEY,
   destination VARCHAR(255),
   flight_date DATE,
-  cost NUMERIC,
   ticket_type VARCHAR(255),
   passenger_id INT8 REFERENCES passengers(id)
 );

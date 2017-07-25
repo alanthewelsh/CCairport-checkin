@@ -1,41 +1,22 @@
-<form method="post" action="/passengers/tickets">
-  <label for="destination-field">Enter Destination:</label>
-  <input
-  type="text"
-  name="destination"
-  id="destination-field"
-  />
+<h1>Add Ticket to Passenger</h1>
+<h3>Select Passenger to Add Ticket to</h3>
+<br>
+<a href='/passengers'>Home</a>
+<br>
 
 
-  <label for="flight_date-field">Enter Flight Date:</label>
-  <input
-  type="date"
-  name="flight_date"
-  id="flight_date-field"
-  />
+<table class="grid">
+  <tr>
+    <th>Passenger Name</th>
+    <th>Arrival Status</th>
+  </tr>
+  <% @passengers.each do |passenger| %>
+  <tr>
+    <td><a href="/passengers/<%= passenger.id %>/edit"><%= passenger.passenger_name %></a></td>
+    <td><%= passenger.arrival_status%></td>
+  </tr>
+<% end %>
+</table>
 
-  <label for="cost-field">Enter Cost of Flight:</label>
-  <input
-  type="numeric"
-  name="cost"
-  id="cost-field"
-  />
+</section>
 
- <label for="ticket_type-feild">Enter the Ticket Type:</label>
- <select name="ticket_type" id="ticket_type-selection">
-   <option value="ECONOMY"> ECONOMY </option>
-   <option value="BUSINESS"> BUSINESS </option>
-   </select>
- 
-
-
-  <input type="submit" value="Add Ticket">
-</form>
-
-
-<form method="post">
-  
-</form>
-
-
-<a href='/passengers/'>Home</a>

@@ -38,7 +38,7 @@ class Passenger
   end 
 
   def update()
-    sql = "UPDATE pizzas SET
+    sql = "UPDATE passengers SET
       first_name = '#{ @first_name }',
       last_name = '#{ @last_name }',
       nationality = '#{ @nationality }',
@@ -50,6 +50,12 @@ class Passenger
 
   def format_name
     return "#{@first_name.capitalize} #{@last_name.capitalize}"
+  end
+
+  def delete()
+    sql = "DELETE FROM passengers 
+    WHERE id = #{@id}"
+    SqlRunner.run(sql, values)
   end
 
   def self.find( id )

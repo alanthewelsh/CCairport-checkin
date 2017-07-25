@@ -1,17 +1,19 @@
 <h1>Airline Check-in</h1>
-<a href='/passengers/tickets'>List Tickets</a>
+
 <a href='/passengers/new'>Add Passenger</a>
+<a href='/passengers/tickets/add'>Add Ticket to Passenger</a>
+
 
 <h2>Welcome to the airline check-in system</h2>
 
-<section class="body">
+<section class="label">
 
-  <table>
+  <table class="grid">
     <tr>
       <th>Passenger Name</th>
       <th>Arrival Status</th>
     </tr>
-  <% @passengers.each do |passenger| %>
+    <% @passengers.each do |passenger| %>
     <tr>
       <td><a href="/passengers/<%= passenger.id %>/edit"><%= passenger.passenger_name %></a></td>
       <td><%= passenger.arrival_status%></td>
