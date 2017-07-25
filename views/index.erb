@@ -1,17 +1,27 @@
+<div>
 <h1>Airline Check-in</h1>
-
+</div>
+<div>
+<section>
 <a href='/passengers/new'>Add Passenger</a>
+<br>
 <a href='/passengers/tickets/add'>Add Ticket to Passenger</a>
+</section>
+</div>
 
-
+<div>
 <h2>Welcome to the airline check-in system</h2>
-
-<section class="label">
+</div>
+<div>
+<section>
 
   <table class="grid">
     <tr>
+      <div>
       <th>Passenger Name</th>
       <th>Arrival Status</th>
+      </div>
+      <div>
     </tr>
     <% @passengers.each do |passenger| %>
     <tr>
@@ -28,7 +38,9 @@
     </tr>
   <% end %>
   </table>
+  </div>
 
 </section>
+</div>
 
 

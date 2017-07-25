@@ -1,10 +1,12 @@
+<link rel="stylesheet" type="text/css" href="styles.css">
+<div class="body">
 <h1>Passenger Management</h1>
 
 <a href='/passengers'>Home</a>
 <br>
 <h2>Passenger Edit</h2>
-  <section class="body">
-    <form method="post" action="/passengers/<%=@passenger.id%>">
+  <section class="tickets">
+    <form method="post" action="/passengers/<%= @passenger.id %>">
     <br>
       <label for="first-name-field">First Name:</label>
       <input
@@ -53,20 +55,22 @@
       <input type='submit' value="Edit Passenger">
     </form>
   </section>
-  <br>
+
+
+<section>
   <h2>Add Ticket to Passenger</h2>
-  <table>
-  <br>
-      <form method="post" action="/passengers/tickets">
-  <label for="destination-selection">Select Destination</label>
-  <select name="Destination" id="passenger-selection">
-    <option value="Paris">Paris</option>
-    <option value="New York">New York</option>
-    <option value="Peckham">Peckham</option>
-    <option value="Rome">Rome</option>
-    <option value="Dublin">Dublin</option>
-    <option value="Manchester">Manchester</option>
-  </select>
+
+      <form method="post" action="/passengers/<%= @passenger.id %>/tickets">
+
+        <label for="destination-selection">Select Destination</label>
+        <select name="destination" id="destination-selection">
+          <option value="Paris">Paris</option>
+          <option value="New York">New York</option>
+          <option value="Peckham">Peckham</option>
+          <option value="Rome">Rome</option>
+          <option value="Dublin">Dublin</option>
+          <option value="Manchester">Manchester</option>
+        </select>
 
         <br>
         <label for="flight_date-field">Enter Flight Date:</label>
@@ -81,17 +85,10 @@
        <select name="ticket_type" id="ticket_type-selection">
          <option value="ECONOMY"> ECONOMY </option>
          <option value="BUSINESS"> BUSINESS </option>
-         </select>
+      </select>
       <br>
-        <input type="submit" value="Add Ticket">
-      </form>
-      <form method="post">
-      </form>
-  </table>
-
-  <section>
-
-
-
-
+      <button type="submit">Add Ticket</button>
+    </form>
+</section>
+</div>
    

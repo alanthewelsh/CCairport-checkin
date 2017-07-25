@@ -15,17 +15,17 @@ get '/passengers/tickets' do
   @tickets = Ticket.all
   erb( :tickets_index )
 end
-
+#below is adding the passengers to the tickets
 get '/passengers/tickets/add' do
   @tickets = Ticket.all
   @passengers = Passenger.all
   erb( :add_ticket )
 end
 
-post '/passengers/tickets' do
+post '/passengers/:passenger_id/tickets' do
   new_ticket = Ticket.new(params)
   new_ticket.save
-  redirect to '/passenger/tickets'
+  redirect to '/passengers'
 end 
 
 get '/passengers/new' do
