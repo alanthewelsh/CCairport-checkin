@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('./ticket')
 require('pry')
 
 class Passenger
@@ -36,11 +37,41 @@ class Passenger
     return "#{@arrived}"
   end 
 
+  def update()
+    sql = "UPDATE pizzas SET
+      first_name = '#{ @first_name }',
+      last_name = '#{ @last_name }',
+      nationality = '#{ @nationality }',
+      date_of_purchase = '#{ @date_of_purchase }',
+      arrived = '#{@arrived}'
+      WHERE id = '#{ @id }';"
+    SqlRunner.run( sql )
+  end
+
+  def format_name
+    return "#{@first_name.capitalize} #{@last_name.capitalize}"
+  end
+
+  def self.find( id )
+    sql = "SELECT * FROM passengers WHERE id=#{id};"
+    passenger = SqlRunner.run( sql )
+    result = Passenger.new( passenger.first )
+
+    return result
+  end
+
   def self.delete_all()
     sql = "DELETE FROM passengers"
     SqlRunner.run(sql)
   end
 
+  def tickets
+    sql = "SELECT * FROM tickets WHERE passenger_id = #{@id};"
+    ticket = SqlRunner.run(sql)
+    result = ticket.map { |ticket| Ticket.new(ticket) }
+    return result
+  end 
+  
   def self.all()
     sql = "SELECT * FROM passengers"
     passenger = SqlRunner.run(sql)

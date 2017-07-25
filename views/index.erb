@@ -1,28 +1,32 @@
 <h1>Airline Check-in</h1>
-<a href='/passenger/tickets'>List Tickets</a>
-<a href='/passenger/new'>Add Passenger</a>
-
-
+<a href='/passengers/tickets'>List Tickets</a>
+<a href='/passengers/new'>Add Passenger</a>
 
 <h2>Welcome to the airline check-in system</h2>
-<table>
-  <tr>
-  <th>Passenger</th>
-  <th></th>
- 
 
-<td><% @passengers.each do |passenger| %></td>
-  <p>Passenger Name: <%= passenger.passenger_name%></p>
-  <p>Arrival Status: <%= passenger.arrival_status%></p>
-<td><% end %></td>
-  </tr>
-  <tr>
+<section class="body">
 
-  <th>Ticket Info</th>
-    <td><% @tickets.each do |ticket| %></td>
-  <td><p>Flight # : <%= ticket.destination%></p></td>
-  <td><p>Ticket Class: <%= ticket.class%></p></td>
-<td><% end %><td>
-  </tr>
-</table>
+  <table>
+    <tr>
+      <th>Passenger Name</th>
+      <th>Arrival Status</th>
+    </tr>
+  <% @passengers.each do |passenger| %>
+    <tr>
+      <td><a href="/passengers/<%= passenger.id %>/edit"><%= passenger.passenger_name %></a></td>
+      <td><%= passenger.arrival_status%></td>
+      <td>
+        <ul>
+        <% passenger.tickets.each do |ticket| %>
+          <li>Destination: <%= ticket.destination%></li>
+          <li>Class: <%= ticket.class%></li>
+        <% end %>
+        </ul>
+      </td> 
+    </tr>
+  <% end %>
+  </table>
+
+</section>
+
 

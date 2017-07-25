@@ -5,37 +5,41 @@ require_relative('./models/ticket.rb')
 require('pry')
 
 #INDEX
-get '/passenger/?' do
+get '/passengers/?' do
   @passengers = Passenger.all
   @tickets = Ticket.all
   erb( :index )
 end
 
-get '/passenger/tickets' do
+get '/passengers/tickets' do
   @tickets = Ticket.all
   erb( :tickets_index )
 end
 
-get '/passenger/tickets/add' do
+get '/passengers/tickets/add' do
   @tickets = Ticket.all
   erb( :add_ticket )
 end
 
-post '/passenger/tickets' do
+post '/passengers/tickets' do
   new_ticket = Ticket.new(params)
   new_ticket.save
   redirect to '/passenger/tickets'
 end 
 
-get '/passenger/new' do
+get '/passengers/new' do
   @passengers = Passenger.all
   erb(:new)
 end
 
-post '/passenger' do
+post '/passengers' do
 
   new_passenger = Passenger.new(params)
   new_passenger.save
-  redirect to '/passenger'
+  redirect to '/passengers'
 end 
 
+get '/passengers/:id/edit' do
+  @passengers = Passenger.find(params['id'])
+  erb(:edit)
+end

@@ -1,0 +1,50 @@
+<form method="post" action="/passenger/<%= @passenger.id %>">
+  <label for="first-name-field">First Name:</label>
+  <input
+  type="text"
+  name="first_name"
+  id="first-name-field"
+  value="<%= @passenger.first_name %>"
+  />
+
+  <label for="last-name-field">Last Name:</label>
+  <input
+  type="text"
+  name="last_name"
+  id="last-name-field"
+  value="<%= @passenger.last_name %>"
+  />
+
+  <label for="nationality-field">Nationality:</label>
+  <input
+  type="text"
+  name="nationality"
+  id="nationality-field"
+  value="<%= @passenger.nationality %>"
+  />
+
+  <label for="date_of_purchase-field">Date of Purchase:</label>
+  <input
+  type="date"
+  name="date_of_purchase"
+  id="date_of_purchase-field"
+  value="<%= @passenger.date_of_purchase %>"
+  />
+
+
+  <label for="arrived-selection">Has the Passenger Arrived</label>
+  <select name="arrived" id="passenger-selection">
+    <option
+    value="ARRIVED"
+    <%= "selected" if @passenger.arrived == "ARRIVED" %>
+    >ARRIVED</option>
+    <option
+    value="NOT ARRIVED"
+    <%= "selected" if @passenger.arrived == "NOT ARRIVED" %>
+    >NOT ARRIVED</option>
+  </select>
+
+
+
+  <input type='submit' value="Edit Pizza">
+</form>
