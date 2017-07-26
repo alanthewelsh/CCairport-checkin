@@ -29,6 +29,7 @@ post '/passengers/:passenger_id/tickets' do
 end 
 
 get '/passengers/new' do
+  current_page = 'passengers'
   @passengers = Passenger.all
   erb(:new)
 end

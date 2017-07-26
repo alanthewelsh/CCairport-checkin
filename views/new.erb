@@ -1,76 +1,79 @@
-<div>
-<h1> Add New Passenger </h1>
-</div>
-<div>
- <a href='/passengers'>Home</a>
-</div>
-<br> 
-<div>
-<br>
-<form method="post" action="/passengers">
-  <label for="first-name-field">First Name:</label>
-  <input
-  type="text"
-  name="first_name"
-  id="first-name-field"
-  />
-<br>
-<br>
-  <label for="last-name-field">Last Name:</label>
-  <input
-  type="text"
-  name="last_name"
-  id="last-name-field"
-  />
-<br>
-<br>
-  <label for="nationality">Enter Nationality:</label>
-  <input
-  type="text"
-  name="nationality"
-  id="nationality-field"
-  />
-<br>
-<br>
-  <label for="date_of_purchase">Enter Date of Purchase:</label>
-  <input
-  type="date"
-  name="date_of_purchase"
-  id="date_of_purchase-field"
-  />
-<br>
-<br>
-<br>
- <label for="arrival-selection">Has the Passenger Arrived?:</label>
- <select name="arrived" id="passenger-selection">
-   <option value="NOT ARRIVED"> NOT ARRIVED </option>
-   <option value="ARRIVED"> ARRIVED </option>
-   </select>
- 
-<br>
-<br>
+<section class="back">
+  <section class="box">
+    <h1> Add New Passenger </h1>
+  </section>
+  <section class="box">
+    <a href='/passengers'>Home</a>
+  </section>
+  <br> 
+  <section class="box">
+  <br>
+  <form method="post" action="/passengers">
+    <label for="first-name-field">First Name:</label>
+    <input
+    type="text"
+    name="first_name"
+    id="first-name-field"
+    />
+  <br>
+  <br>
+    <label for="last-name-field">Last Name:</label>
+    <input
+    type="text"
+    name="last_name"
+    id="last-name-field"
+    />
+  <br>
+  <br>
+    <label for="nationality">Enter Nationality:</label>
+    <input
+    type="text"
+    name="nationality"
+    id="nationality-field"
+    />
+  <br>
+  <br>
+    <label for="date_of_purchase">Enter Date of Purchase:</label>
+    <input
+    type="date"
+    name="date_of_purchase"
+    id="date_of_purchase-field"
+    />
+  <br>
+  <br>
+  <br>
+   <label for="arrival-selection">Has the Passenger Arrived?:</label>
+   <select name="arrived" id="passenger-selection">
+     <option value="NOT ARRIVED"> NOT ARRIVED </option>
+     <option value="ARRIVED"> ARRIVED </option>
+     </select>
+   
+  <br>
+  <br>
 
-  <input type="submit" value="Add Passenger">
-</form>
-</div>
-
-
-<form method="post">
+    <input type="submit" value="Add Passenger">
+  </form>
   
-</form>
-<div>
-<section>
-  <table class="grid">
-    <tr>
-      <th>Passenger Name</th>
-      <th>Arrival Status</th>
-    </tr>
-    <% @passengers.each do |passenger| %>
-    <tr>
-      <td><a href="/passengers/<%= passenger.id %>/edit"><%= passenger.passenger_name %></a></td>
-      <td><%= passenger.arrival_status%></td>
-    </tr>
-  <% end %>
-  </table>
+
+
+  <form method="post">
+    
+  </form>
+  </section>
+ 
+  <section class="box">
+    <table class="grid">
+      <tr>
+        <th>Passenger Name</th>
+        <th>Arrival Status</th>
+      </tr>
+      <% @passengers.each do |passenger| %>
+      <tr>
+        <td><a href="/passengers/<%= passenger.id %>/edit"><%= passenger.passenger_name %></a></td>
+        <td><%= passenger.arrival_status%></td>
+      </tr>
+    <% end %>
+    </table>
+  </section>
+  </div>
 </section>
-</div>

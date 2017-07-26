@@ -1,30 +1,27 @@
-<link rel="stylesheet" type="text/css" href="styles.css">
-<body class="body">
-<div>
-<h1>Add Ticket to Passenger</h1>
-<h3>Select Passenger to Add Ticket to</h3>
-</div>
-<br>
-<div>
-<a href='/passengers'>Home</a>
-</div>
-<br>
+<section class="check">
+  <section class="other_box"
+    <h1>Add Ticket to Passenger</h1>
+    <h3>Select Passenger to Add Ticket to</h3>
+  </section>
+  <br>
+  <section class="other_box">
+    <a href='/passengers'>Home</a>
+  </section>
+  <br>
 
-<div>
-<table class="grid">
-  <tr>
-    <th>Passenger Name</th>
-    <th>Arrival Status</th>
-  </tr>
-  <% @passengers.each do |passenger| %>
-  <tr>
-    <td><a href="/passengers/<%= passenger.id %>/edit"><%= passenger.passenger_name %></a></td>
-    <td><%= passenger.arrival_status%></td>
-  </tr>
-<% end %>
-</table>
-
+  <section class="other_box">
+    <table class="grid">
+      <tr>
+        <th>Passenger Name</th>
+        <th>Arrival Status</th>
+      </tr>
+        <% @passengers.each do |passenger| %>
+      <tr>
+        <td><a href="/passengers/<%= passenger.id %>/edit"><%= passenger.passenger_name %></a></td>
+        <td><%= passenger.arrival_status%></td>
+      </tr>
+    <% end %>
+    </table>
+  </section>
 </section>
-</div>
-</body>
 
