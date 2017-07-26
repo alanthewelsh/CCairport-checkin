@@ -33,8 +33,9 @@
         <td>
           <ul>
           <% passenger.tickets.each do |ticket| %>
-            <li>Destination: <%= ticket.destination%></li>
+            <li>Destination: <%= ticket.destination%></li> 
             <li>Class: <%= ticket.class%></li>
+            <a href="/passengers/:id/ticket/distroy">Delete</a>
           <% end %>
           </ul>
         </td> 

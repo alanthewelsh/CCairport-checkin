@@ -50,4 +50,15 @@ post '/passengers/:id' do
   redirect to '/passengers'
 end 
 
+post '/passengers/:id/distroy' do
+  passenger_update = Passenger.find(params['id'])
+  passenger_update.delete
+  redirect to '/passengers'
+end 
 
+
+post '/passengers/:id/ticket/distroy' do
+  passenger_update = Ticket.find(params['id'])
+  passenger_update.delete
+  redirect to '/passengers'
+end
